@@ -34,13 +34,16 @@
 		<tr>
 			<th>Id</th>
 			<th>Coursename</th>
-			<!--			<th>Student</th>-->
+			<th>Student</th>
 		</tr>
 		<tr th:each="course : ${courses}">
 			<td th:text="${course.id}"></td>
 			<td th:text="${course.CourseName}"></td>
-			<!--		<tr th:each="student: $(course.students)">-->
-			<!--			<td th:text="${student.id}"></td>-->
+			<td>
+				<p th:each="student : ${course.students}">
+					<span th:text="${student.firstName}">studentname</span>
+				</p>
+			</td>
 		</tr>
 		</tr>
 	</table>

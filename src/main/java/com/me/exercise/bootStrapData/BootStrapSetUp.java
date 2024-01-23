@@ -37,13 +37,13 @@ public class BootStrapSetUp implements CommandLineRunner {
 		Course pythonDeveloperSaved = courseRepository.save(pythonDeveloper);
 
 		Student oneStudent = new Student();
-		oneStudent.setFirstName("firstName1");
-		oneStudent.setLastName("Lastname1");
+		oneStudent.setFirstName("Rahul");
+		oneStudent.setLastName("G");
 		Student oneStudentSaved = studentRepository.save(oneStudent);
 
 		Student twoStudent = new Student();
-		twoStudent.setFirstName("firstName1");
-		twoStudent.setLastName("Lastname1");
+		twoStudent.setFirstName("Anil");
+		twoStudent.setLastName("Deskmukh");
 		Student twoStudentSaved = studentRepository.save(twoStudent);
 
 		Teacher oneTeacher = new Teacher();
@@ -56,10 +56,13 @@ public class BootStrapSetUp implements CommandLineRunner {
 		teacherRepository.save(oneTeacherSaved);
 
 		javadeveCourseSaved.getStudents().add(twoStudentSaved);
+		javadeveCourseSaved.getStudents().add(oneStudentSaved);
+
 		twoStudentSaved.getCourses().add(javadeveCourseSaved);
 
 		pythonDeveloperSaved.getStudents().add(oneStudentSaved);
 		oneStudentSaved.getCourses().add(pythonDeveloperSaved);
+		oneStudentSaved.getCourses().add(javadeveCourseSaved);
 
 		studentRepository.save(oneStudentSaved);
 		courseRepository.save(javadeveCourseSaved);
