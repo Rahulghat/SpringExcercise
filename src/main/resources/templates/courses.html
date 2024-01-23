@@ -41,7 +41,7 @@
 			<td th:text="${course.CourseName}"></td>
 			<td>
 				<p th:each="student : ${course.students}">
-					<span th:text="${student.firstName}">studentname</span>
+					<span th:text="${student.firstName + ' ' + student.lastName}">studentname</span>
 				</p>
 			</td>
 		</tr>
