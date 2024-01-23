@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<style>
+		table,
+		th,
+		td {
+			border: 1px solid white;
+			border-collapse: collapse;
+		}
+
+		th {
+			background-color: #96D4D4;
+		}
+
+		tr:nth-child(even) {
+			background-color: rgba(150, 212, 212, 0.4);
+		}
+
+		th:nth-child(even),
+		td:nth-child(even) {
+			background-color: rgba(150, 212, 212, 0.4);
+		}
+	</style>
+</head>
+
+
+<body>
+	<div style="width:100%;font-size:36px;line-height:48px;background-color:navy;color:white">Courses</div>
+
+
+	<table>
+		<tr>
+			<th>Id</th>
+			<th>Coursename</th>
+			<!--			<th>Student</th>-->
+		</tr>
+		<tr th:each="course : ${courses}">
+			<td th:text="${course.id}"></td>
+			<td th:text="${course.CourseName}"></td>
+			<!--		<tr th:each="student: $(course.students)">-->
+			<!--			<td th:text="${student.id}"></td>-->
+		</tr>
+		</tr>
+	</table>
+
+</body>
+
+</html>
